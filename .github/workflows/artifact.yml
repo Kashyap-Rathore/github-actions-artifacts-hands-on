@@ -18,3 +18,13 @@ jobs:
       with:
         name: hello-artifact
         path: hello.txt
+  download:
+    runs-on: ubuntu-latest
+    steps:
+    - name: upload a file
+      uses: actions/upload-artifact@v4
+      with:
+        name: upload a artifact
+        path: ./artifacts/hello.txt
+    - name: Cat file
+      run: cat hello.txt
