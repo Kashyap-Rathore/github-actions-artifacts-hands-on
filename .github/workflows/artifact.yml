@@ -23,10 +23,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: upload a file
+    - name: Download a artifact
       uses: actions/download-artifact@v4
       with:
-        name: upload a artifact
+        name: hello-artifact
         path: ./artifacts/hello.txt
     - name: Cat file
       run: cat ./artifacts/hello.txt
