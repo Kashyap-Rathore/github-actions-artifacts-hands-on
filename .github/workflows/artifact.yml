@@ -18,7 +18,9 @@ jobs:
       with:
         name: hello-artifact
         path: hello.txt
+  
   download:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: upload a file
@@ -27,4 +29,4 @@ jobs:
         name: upload a artifact
         path: ./artifacts/hello.txt
     - name: Cat file
-      run: cat artifacts/hello.txt
+      run: cat ./artifacts/hello.txt
